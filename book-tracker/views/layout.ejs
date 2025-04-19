@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+</head>
+<body style="
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+    color: #333;
+    min-height: 100vh;
+    padding-bottom: 40px;
+">
+
+    <!-- Navigation Bar -->
+    <nav style="background: linear-gradient(90deg, #6a11cb, #2575fc); padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-bottom: 2px solid #ddd;">
+        <h1 style="margin: 0; color: white; font-size: 28px; letter-spacing: 1px; font-weight: 600;">📚 Book Tracker</h1>
+        <div>
+            <a href="/" style="color: white; margin-left: 20px; text-decoration: none; font-weight: bold; transition: color 0.3s; font-size: 1rem;">Home</a>
+            <a href="/add" style="
+                background-color: white;
+                color: #2575fc;
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-weight: bold;
+                text-decoration: none;
+                margin-left: 20px;
+                transition: background-color 0.3s;
+            ">Add Book</a>
+        </div>
+    </nav>
+
+    <!-- Main Page Content -->
+    <div style="padding: 30px; max-width: 900px; margin: auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-top: 30px;">
+        <%- body %>
+    </div>
+
+</body>
+</html>

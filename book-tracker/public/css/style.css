@@ -1,0 +1,223 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar Title */
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Navbar Links */
+nav .nav-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Home link */
+nav a.home {
+    color: white;
+}
+
+nav a.home:hover {
+    opacity: 0.8;
+}
+
+/* Add button */
+nav a.add {
+    background-color: white;
+    color: #2575fc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav a.add:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Sorting Section */
+.sorting {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sorting a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sorting a:hover {
+    background-color: #ecf0f1;
+    color: #2980b9;
+}
+
+/* Book Cards */
+.book-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.book-card .no-cover {
+    width: 100%;
+    height: 250px;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.book-card h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.book-card p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.book-card .rating {
+    color: #f39c12;
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+.book-card .date {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.book-card .review {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    font-style: italic;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Actions */
+.book-card .actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.book-card .actions a,
+.book-card .actions button {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #3498db;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.book-card .actions a:hover,
+.book-card .actions button:hover {
+    background-color: #f9fafb;
+    color: #2980b9;
+}
+
+.book-card .actions button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #e6f0ff, #ffffff);
+            color: #333;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        nav {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #ddd;
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a.add-book {
+            background-color: white;
+            color: #2575fc;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .sorting {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .sorting span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .sorting a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .sorting a.active {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        .sorting small {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>📚 Book Tracker</h1>
+        <div class="nav-links">
+            <a href="/" style="color: white;">Home</a>
+            <a href="/add" class="add-book">Add Book</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sorting Controls -->
+        <div class="sorting">
+            <span>Sort by:</span>
+            <% ['rating', 'date_read', 'title'].forEach(sortType => { %>
+                <a href="/?sort=<%= sortType %>" 
+                   class="<%= sortBy === sortType ? 'active' : '' %>"
+                   style="font-weight: <%= sortBy === sortType ? 'bold' : 'normal' %>;">
+                    <%= sortType.replace('_', ' ') %>
+                    <small><%= sortDirections[sortType] %></small>
+                </a>
+            <% }) %>
+        </div>
+
+        <!-- Book Grid -->
+        <div class="book-grid">
+            <% books.forEach(book => { %>
+                <div class="book-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); background-color: #fff; transition: transform 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: space-between; height: 100%; cursor: pointer; overflow: hidden;">
+                    <% if (book.isbn) { %>
+                        <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-L.jpg" alt="Book cover" style="width: 100%; height: 250px; object-fit: contain; border-radius: 8px;">
+                    <% } else { %>
+                        <div class="no-cover" style="width: 100%; height: 250px; background-color: #ecf0f1; display: flex; align-items: center; justify-content: center; color: #7f8c8d; font-size: 14px; border-radius: 8px;">
+                            No cover available
+                        </div>
+                    <% } %>
+
+                    <h3 style="margin-top: 20px; font-size: 1.5rem; color: #2c3e50; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                        <%= book.title %>
+                    </h3>
+                    <p style="color: #555; font-size: 1.1rem;">by <%= book.author %></p>
+                    <div class="rating" style="color: #f39c12; font-size: 1.4rem; margin-top: 10px;">
+                        <%= '★'.repeat(book.rating) %>
+                    </div>
+                    <p class="date" style="font-size: 0.95rem; color: #7f8c8d; margin-top: 10px;">
+                        Read on: <%= new Date(book.date_read).toLocaleDateString() %>
+                    </p>
+
+                    <% if (book.review) { %>
+                        <div class="review" style="margin-top: 20px; font-size: 1.1rem; color: #333; font-style: italic; padding: 15px; background-color: #ecf0f1; border-radius: 8px; border-left: 5px solid #3498db; font-family: 'Roboto', sans-serif; line-height: 1.6;">
+                            <%= book.review %>
+                        </div>
+                    <% } %>
+
+                    <div class="actions" style="margin-top: 25px; display: flex; justify-content: space-between; gap: 20px; width: 100%; font-size: 1.1rem;">
+                        <a href="/edit/<%= book.id %>" style="text-decoration: none; color: #3498db; font-weight: 500; padding: 12px 20px; background-color: #f9fafb; border-radius: 8px; text-align: center; border: 1px solid #3498db; transition: background-color 0.3s ease, color 0.3s ease; cursor: pointer;">
+                            Edit
+                        </a>
+                        <form action="/delete/<%= book.id %>" method="POST" style="display: inline;">
+                            <button type="submit" style="background-color: #e74c3c; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: background-color 0.3s ease; width: 100%; text-align: center;">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>

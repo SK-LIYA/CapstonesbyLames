@@ -1,0 +1,261 @@
+/* General Reset & Font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* === COMMON CONTAINERS === */
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container-small {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.container-medium {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.container-wide {
+    max-width: 1000px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+/* === HEADINGS === */
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* === ABOUT PAGE === */
+body.about {
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    color: #4a148c;
+}
+
+.about h1 {
+    color: #880e4f;
+}
+
+.about img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 20px;
+    color: #6a1b9a;
+}
+
+/* === CONTACT PAGE === */
+body.contact {
+    background: linear-gradient(to right, #e1f5fe, #b3e5fc);
+    color: #01579b;
+}
+
+.contact h1 {
+    color: #0277bd;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact button {
+    padding: 10px;
+    background-color: #0277bd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contact .back-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact .back-link a {
+    padding: 10px 20px;
+    background-color: #01579b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* === HOBBIES PAGE === */
+body.hobbies {
+    background: linear-gradient(to right, #fff3e0, #ffe0b2);
+    color: #4e342e;
+}
+
+.hobbies h1 {
+    font-size: 32px;
+    color: #ef6c00;
+}
+
+.hobbies ul {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.hobbies a {
+    padding: 10px 20px;
+    background-color: #ef6c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* === INDEX PAGE === */
+body.resume {
+    background: linear-gradient(to right, #e1bee7, #f8bbd0);
+    color: #4a148c;
+}
+
+.resume h1 {
+    text-align: center;
+    font-size: 38px;
+    color: #880e4f;
+}
+
+.resume h2 {
+    color: #ad1457;
+}
+
+.resume a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.resume ul {
+    padding-left: 20px;
+}
+
+/* === MENU PAGE === */
+body.menu {
+    background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+    color: #4a148c;
+}
+
+.menu h1 {
+    font-size: 42px;
+    color: #880e4f;
+}
+
+.menu p {
+    font-size: 18px;
+    color: #6a1b9a;
+    margin-bottom: 40px;
+}
+
+.menu .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.menu a.card {
+    width: 200px;
+    height: 140px;
+    color: white;
+    text-decoration: none;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.menu a.resume { background-color: #f06292; }
+.menu a.projects { background-color: #9575cd; }
+.menu a.hobbies { background-color: #4db6ac; }
+.menu a.contact { background-color: #64b5f6; }
+.menu a.download { background-color: #ffb74d; }
+.menu a.about { background-color: #ba68c8; }
+
+.menu footer {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #6d1b7b;
+}
+
+/* === PROJECTS PAGE === */
+body.projects {
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+    color: #333;
+}
+
+.projects h1 {
+    text-align: center;
+    color: #0d47a1;
+    font-size: 32px;
+}
+
+.projects p.subtitle {
+    text-align: center;
+    color: #616161;
+}
+
+.projects hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #0d47a1, #64b5f6);
+    margin: 20px 0;
+}
+
+.projects h2 {
+    color: #1565c0;
+    font-size: 22px;
+}

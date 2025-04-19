@@ -1,0 +1,43 @@
+<div class="container" style="max-width: 500px; margin: 50px auto; padding: 30px; border: 1px solid #c82929; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9fb;">
+    <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.9rem; font-weight: 600;">Add New Book</h2>
+    <form action="/add" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+        
+        <label style="font-weight: 600; color: #34495e; font-size: 1.1rem;">
+            Title:
+            <input type="text" name="title" required style="padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; color: #333; background-color: #fff; transition: border 0.3s ease; outline: none;">
+        </label>
+
+        <label style="font-weight: 600; color: #34495e; font-size: 1.1rem;">
+            Author:
+            <input type="text" name="author" required style="padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; color: #333; background-color: #fff; transition: border 0.3s ease; outline: none;">
+        </label>
+
+        <label style="font-weight: 600; color: #34495e; font-size: 1.1rem;">
+            Rating (1-5):
+            <select name="rating" required style="padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; color: #333; background-color: #fff; transition: border 0.3s ease; outline: none;">
+                <% for(let i = 1; i <= 5; i++) { %>
+                    <option value="<%= i %>"><%= i %></option>
+                <% } %>
+            </select>
+        </label>
+
+        <label style="font-weight: 600; color: #34495e; font-size: 1.1rem;">
+            Review:
+            <textarea name="review" rows="4" style="padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; color: #333; background-color: #fff; transition: border 0.3s ease; outline: none;"></textarea>
+        </label>
+
+        <label style="font-weight: 600; color: #34495e; font-size: 1.1rem;">
+            Date Read:
+            <input type="date" name="date_read" required style="padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; color: #333; background-color: #fff; transition: border 0.3s ease; outline: none;">
+        </label>
+
+        <label style="font-weight: 600; color: #34495e; font-size: 1.1rem;">
+            ISBN (optional):
+            <input type="text" name="isbn" style="padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; color: #333; background-color: #fff; transition: border 0.3s ease; outline: none;">
+        </label>
+
+        <button type="submit" style="padding: 12px 20px; background-color: #27ae60; color: white; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; transition: background-color 0.3s ease; text-transform: uppercase;">
+            Add Book
+        </button>
+    </form>
+</div>

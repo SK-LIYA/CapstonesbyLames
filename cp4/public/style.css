@@ -1,0 +1,104 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Header Styles */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+  }
+  
+  /* Main Content */
+  main {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Form Styles */
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  form button {
+    padding: 10px 20px;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  form button:hover {
+    background: #555;
+  }
+  
+  /* Cocktail Card Styles */
+  .cocktail-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .cocktail-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .cocktail-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    main {
+      padding: 0 10px;
+    }
+    nav a {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+  

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Error</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Error</h1>
+    <nav>
+      <a href="/">Back to Search</a>
+    </nav>
+  </header>
+  <main>
+    <p><%= error %></p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Cocktail Finder</p>
+  </footer>
+</body>
+</html>

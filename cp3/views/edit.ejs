@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Post</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0;">
+
+  <!-- Header -->
+  <header style="background: #333; color: #fff; padding: 10px; text-align: center;">
+    <h1 style="margin: 0; font-size: 2em;">Edit Post</h1>
+    <nav>
+      <a href="/" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main style="max-width: 800px; margin: 20px auto; padding: 0 10px;">
+    <form action="/posts/edit/<%= post.id %>" method="POST" style="background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <label for="title" style="display: block; margin-top: 10px; font-size: 1.1em; color: #333;">Title:</label>
+      <input type="text" name="title" id="title" value="<%= post.title %>" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 3px; font-size: 1em;">
+
+      <label for="content" style="display: block; margin-top: 10px; font-size: 1.1em; color: #333;">Content:</label>
+      <textarea name="content" id="content" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 3px; font-size: 1em;"></textarea>
+
+      <button type="submit" style="margin-top: 15px; padding: 10px; background: #333; color: #fff; border: none; border-radius: 3px; cursor: pointer; font-size: 1em; transition: background 0.3s ease;">Update Post</button>
+    </form>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cocktail Results</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    nav a:hover {
+      color: #ffffff;
+      background-color: #28a745;
+      border-radius: 5px;
+    }
+    main {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .cocktail-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+    .cocktail-card:hover {
+      transform: translateY(-10px);
+    }
+    .cocktail-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #343a40;
+      font-size: 24px;
+      margin: 0 0 10px 0;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 5px 0;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cocktail Results</h1>
+    <nav>
+      <a href="/">Back to Search</a>
+    </nav>
+  </header>
+  <main>
+    <% if (drinks.length === 0) { %>
+      <p>No cocktails found. Please try another search.</p>
+    <% } else { %>
+      <% drinks.forEach(drink => { %>
+        <div class="cocktail-card">
+          <h2><%= drink.strDrink %></h2>
+          <img src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>" class="cocktail-image">
+          <p><strong>Category:</strong> <%= drink.strCategory %></p>
+          <p><strong>Alcoholic:</strong> <%= drink.strAlcoholic %></p>
+          <p><strong>Glass:</strong> <%= drink.strGlass %></p>
+          <p><strong>Instructions:</strong> <%= drink.strInstructions %></p>
+        </div>
+      <% }); %>
+    <% } %>
+  </main>
+  <footer>
+    <p>&copy; 2025 Cocktail Finder</p>
+  </footer>
+</body>
+</html>

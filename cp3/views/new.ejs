@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create New Post</title>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; color: #333;">
+
+  <!-- Header -->
+  <header style="background-color: #2C3E50; color: #fff; padding: 20px 0; text-align: center;">
+    <h1 style="margin: 0; font-size: 2.5em; letter-spacing: 1px;">Create a New Post</h1>
+    <nav>
+      <a href="/" style="color: #ECF0F1; font-size: 1.2em; text-decoration: none; margin: 10px 20px; padding: 8px 16px; background-color: #3498DB; border-radius: 5px; font-weight: bold; transition: background-color 0.3s;">
+        Home
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main style="max-width: 900px; margin: 40px auto; padding: 0 15px;">
+    <form action="/posts" method="POST" style="background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+      
+      <!-- Title Input -->
+      <label for="title" style="display: block; font-size: 1.2em; margin-bottom: 8px; font-weight: bold;">Title:</label>
+      <input type="text" name="title" id="title" required style="width: 100%; padding: 12px; font-size: 1.1em; margin-bottom: 20px; border: 2px solid #ccc; border-radius: 5px; transition: border-color 0.3s;">
+
+      <!-- Content Input -->
+      <label for="content" style="display: block; font-size: 1.2em; margin-bottom: 8px; font-weight: bold;">Content:</label>
+      <textarea name="content" id="content" rows="8" required style="width: 100%; padding: 12px; font-size: 1.1em; margin-bottom: 20px; border: 2px solid #ccc; border-radius: 5px; transition: border-color 0.3s;"></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" style="width: 100%; padding: 15px; font-size: 1.2em; background-color: #3498DB; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+        Create Post
+      </button>
+    </form>
+  </main>
+
+</body>
+</html>
